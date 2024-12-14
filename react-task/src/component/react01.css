@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.meal-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #c2977a;
+    /* color:#8a3904 ; */
+}
+
+
+.search-bar {
+    cursor: pointer;
+    margin-left: 335px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #59300e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar:focus {
+    outline: none;
+    transform: scale(1.02);
+}
+
+
+.area-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+select {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 2px solid #59300e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+select:hover,
+select:focus {
+    outline: none;
+    transform: scale(1.02);
+}
+
+
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+.meal-card {
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #59300e;
+}
+
+.meal-card:hover {
+    transform: translateY(-10px);
+}
+
+.meal-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1.5px solid #59300e;
+}
+
+.meal-card h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 10px 0;
+    color: #333;
+}
+
+.meal-card p {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.meal-card button {
+    display: block;
+    width: 80%;
+    margin: 0 auto 20px;
+    padding: 10px 0;
+    background-color: #81400a;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.meal-card button:hover {
+    background-color: #e64a19;
+}
+
+
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 20px;
+}

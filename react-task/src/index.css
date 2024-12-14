@@ -72,7 +72,6 @@ button:focus-visible {
 
 body {
   margin-top: 60px;
-  font-family: 'Poppins', sans-serif;
 }
 
 * {
@@ -91,7 +90,6 @@ nav {
   width: 100%;
   top: 0;
   z-index: 999;
-  margin-top: 10px;
 }
 
 nav a {
