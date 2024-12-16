@@ -8,7 +8,9 @@ function react01() {
   const [ingredient, setIngredient] = useState("");
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const [defaultSearch,setDefaultSearch]=useState("all");
+  const [selectedMeal, setSelectedMeal] = useState(null); 
+  const [showPopup, setShowPopup] = useState(false); 
+
 
   const areas = ["American", "British", "Canadian", "Chinese", "Croatian", "Dutch","Egyptian", "Filipino", "French", "Greek", "Indian", "Irish", "Italian", "Jamaican", "Japanese", "Kenyan", "Malaysian", "Mexican", "Moroccan", "Polish", "Portuguese", "Russian", "Spanish", "Thai", "Tunisian", "Turkish", "Ukrainian", "Unknown", "Vietnamese"];
 
@@ -52,6 +54,23 @@ function react01() {
     }
   }, [searchQuery, area, ingredient]);
 
+
+
+  const handleInstructionClick = (mealId) => {
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setSelectedMeal(data.meals[0]); // Store the entire meal data
+        setShowPopup(true);
+      })
+      .catch((error) => console.error('Error fetching meal details:', error));
+  };
+
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setSelectedMeal(null);
+  };
 
   return (
     <div className="meal-container">
@@ -98,9 +117,7 @@ function react01() {
                 <img src={meal.strMealThumb} alt={meal.strMeal} />
                 <h3>{meal.strMeal}</h3>
                 <p>{meal.strArea}</p>
-                <button>Recipe</button>
-                {/* <p>{meal.strInstructions}</p> */}
-                {/* <button onClick={() => window.open(meal.strSource, "_blank")}>Recipe</button> */}
+                <button  onClick={() => handleInstructionClick(meal.idMeal)}>Recipe</button>
               </div>
             ))
           ) : (
@@ -109,8 +126,21 @@ function react01() {
         </div>
       )}
 
-
-     
+      {/* Popup for instructions */}
+      {showPopup && selectedMeal && (
+        <div className="popup">
+          <div className="popup-content">
+            <button className="close-btn" onClick={closePopup}>X</button>
+            <div className="text">{selectedMeal.strMeal}</div>
+            <img src={selectedMeal.strMealThumb} alt={selectedMeal.strMeal} className="popup-img"/>
+          
+            
+            <div className="instructions-scroll">
+              <p>{selectedMeal.strInstructions}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
 
     </div>

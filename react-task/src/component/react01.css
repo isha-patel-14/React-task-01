@@ -133,3 +133,81 @@ select:focus {
     color: #666;
     margin-top: 20px;
 }
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .text{
+    color:#7c3800ec;
+    font-weight: 600;
+    font-size: 30px;
+  }
+  
+  .popup-content img.popup-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .instructions-scroll {
+    height: 240px;
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .instructions-scroll p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .close-btn:hover {
+    background-color: #d32f2f;
+  }
+  
