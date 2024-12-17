@@ -13,8 +13,8 @@ const About = () => {
       </section>
 
       <section className="section">
-        <h2>Mocktails</h2>
-        <p>Looking for a refreshing drink to accompany your meal? Our mocktails section is packed with creative,alcohol-beverages, alcohol-free beverages, perfect for any occasion. From tangy fruit punches to creamy lassis, we ensure that every sip is as flavorful as our dishes.</p>
+        <h2>Cocktails</h2>
+        <p>Looking for a refreshing drink to accompany your meal? Our cocktails section is packed with creative,alcohol-beverages, alcohol-free beverages, perfect for any occasion. From tangy fruit punches to creamy lassis, we ensure that every sip is as flavorful as our dishes.</p>
       </section>
 
       <section className="section">
