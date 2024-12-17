@@ -1,9 +1,9 @@
 import React from 'react'
 
-const react03 = () => {
+function react03() {
   return (
     <div>
-      website-03
+      
     </div>
   )
 }

@@ -65,6 +65,7 @@ function CocktailApp() {
       </section>
 
 
+      <div className='line-1'>
       <section className="search-section">
         <input
           type="text" 
@@ -75,20 +76,7 @@ function CocktailApp() {
         <button onClick={handleSearch}>Search</button>
       </section>
 
-      <section className="search-results">
-        {searchedCocktail.length > 0 ? (
-          <div className="cocktail-list">
-            {searchedCocktail.map(cocktail => (
-              <div key={cocktail.idDrink} className="cocktail-item">
-                <h4>{cocktail.strDrink}</h4>
-                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p>No results found</p>
-        )}
-      </section>
+     
 
       <section className="letter-selection">
         <select onChange={(e) => setSelectedLetter(e.target.value)} value={selectedLetter}>
@@ -106,6 +94,26 @@ function CocktailApp() {
           ))}
         </div>
       </section>
+      </div>
+
+
+
+      <section className="search-results">
+        {searchedCocktail.length > 0 ? (
+          <div className="cocktail-list">
+            {searchedCocktail.map(cocktail => (
+              <div key={cocktail.idDrink} className="cocktail-item">
+                <h4>{cocktail.strDrink}</h4>
+                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p>No results found</p>
+        )}
+      </section>
+
+
       
     </div>
   );
